@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="right">
+        <div class="print">
+          <img src="./images/print.svg" alt="print" />
+        </div>
+        <h2>Create Invite</h2>
+        <a href="./index.html"><button class="button">Back</button></a>
+      </div>
+    </header>
+    <form>
+      <label for="name">Name:</label>
+      <input
+        id="name"
+        type="text"
+        name="name"
+        placeholder="Enter name"
+        value=""
+      />
+      <legend>Invitation From:</legend>
+      <div class="invitation_from">
+        <label class="container" for="bride"
+          >Bride
+          <input type="radio" id="bride" value="bride" name="invitation_from" />
+          <span class="checkmark"></span>
+        </label>
+        <label class="container" for="groom"
+          >Groom
+          <input type="radio" id="groom" value="groom" name="invitation_from" />
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <legend>Invite Persons:</legend>
+      <div class="invite_person">
+        <label class="container" for="one_per"
+          >1 per
+          <input type="radio" id="one_per" value="1 per" name="invite_person" />
+          <span class="checkmark"></span>
+        </label>
+        <label class="container" for="two_per"
+          >2 per
+          <input type="radio" id="two_per" value="2 per" name="invite_person" />
+          <span class="checkmark"></span>
+        </label>
+        <label class="container" for="family"
+          >Family
+          <input type="radio" id="family" value="family" name="invite_person" />
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <legend>Functions:</legend>
+      <div class="functions"></div>
+      <button class="button" type="submit">Save Changes</button>
+    </form>
+    <script src="./script.js"></script>
+  </body>
+</html>

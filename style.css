@@ -1,0 +1,461 @@
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 88px;
+  background: #ffffff;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+header .left {
+  width: 30%;
+  text-align: center;
+}
+
+header .left h1 {
+  font-family: "Courgette", cursive;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 50px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  color: #38808c;
+}
+
+header .right {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 24px;
+}
+
+header .right .print {
+  margin-right: 44px;
+}
+
+header .right button {
+  margin: 0;
+}
+
+.add_invitations {
+  display: none;
+}
+
+.main_section {
+  display: flex;
+  justify-content: space-around;
+  margin: 60px;
+}
+
+.create_invite {
+  background: #ffffff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  padding: 18px;
+  margin: 20px;
+  flex-grow: 1;
+  max-width: 464px;
+  height: fit-content;
+}
+
+h1.heading {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 37px;
+  letter-spacing: 0.02em;
+  color: #353535;
+  margin-bottom: 8px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[id="name"] {
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 4px 8px;
+  outline: none;
+  color: #353535;
+  height: 40px;
+  background: #ffffff;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin: 6px 0px;
+  border: 1px solid #9c9c9c;
+}
+
+input[id="name"]:focus,
+input[id="name"].active {
+  border: 1px solid #38808c;
+  box-shadow: 0px 0px 2px 3px rgba(56, 128, 140, 0.2);
+}
+
+label[for="name"],
+legend {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #353535;
+  margin: 6px 0px;
+}
+
+.invitation_from,
+.invite_person {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+}
+
+.invitation_from .container {
+  width: 46%;
+}
+
+.invite_person .container {
+  width: 30%;
+}
+
+.container {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  color: #353535;
+  position: relative;
+  padding: 10px 10px 10px 35px;
+  height: 40px;
+  cursor: pointer;
+  background: #ffffff;
+  border: 1px solid #9c9c9c;
+  box-sizing: border-box;
+  border-radius: 8px;
+  white-space: nowrap;
+  min-width: fit-content;
+}
+
+.container.radio_label.active {
+  background: rgba(56, 128, 140, 0.1);
+  border: 1px solid #38808c;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 20px;
+  width: 20px;
+  background-color: #e5e5e5;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #ffffff;
+  border: 2px solid #38808c;
+}
+
+.container input:checked .container {
+  background: rgba(56, 128, 140, 0.1);
+  border: 1px solid #38808c;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  background: #fcfcfc;
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  background: #38808c;
+  top: 4px;
+  left: 4px;
+}
+
+.functions {
+  display: flex;
+  flex-direction: column;
+}
+
+.functions .container {
+  border: none;
+}
+
+.functions .checkmark {
+  border-radius: 0;
+}
+
+.functions .checkmark:after {
+  content: "";
+  position: absolute;
+  border-radius: 0;
+}
+
+.button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  padding: 10.5px 24px;
+  height: 42px;
+  color: #ffffff;
+  background: #38808c;
+  border-radius: 8px;
+  border: none;
+  margin-top: 14px;
+  outline: none;
+  cursor: pointer;
+}
+
+.invitations {
+  background: #ffffff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  margin: 20px;
+  flex-grow: 1;
+  max-width: 620px;
+  height: 642px;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 0;
+}
+
+.invitations h1 {
+  margin-left: 18px;
+}
+
+.search_bar {
+  display: flex;
+  align-items: center;
+  background: #eeeeee;
+  border-radius: 8px;
+  padding: 4px 6px;
+  margin: 0 18px;
+}
+
+.search_bar input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  margin-left: 6px;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #353535;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  margin: 0 18px;
+  min-height: 56px;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #9c9c9c;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin: 0 4px;
+  padding: 3px 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #666666;
+  font-family: "Poppins", sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+}
+
+.filter.active {
+  border: 1px solid #c99d45;
+  background: #faf6ed;
+}
+
+.list_of_people {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.alphabet {
+  background: #eeeeee;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+  color: #38808c;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  padding: 4px 12px;
+  text-transform: capitalize;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  cursor: pointer;
+  padding: 13px 6px;
+  margin: 0 18px;
+}
+
+.person .numbers {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.person .name {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #353535;
+  flex-grow: 1;
+  margin: 0 16px;
+  white-space: nowrap;
+  overflow-x: auto;
+  text-transform: capitalize;
+}
+
+hr {
+  border: 1px solid #e5e5e5;
+}
+
+@media screen and (max-width: 992px) {
+  .main_section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .create_invite {
+    width: 100%;
+  }
+
+  .invitations {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    height: 60px;
+  }
+
+  .header .left {
+    display: none;
+  }
+
+  .header .right {
+    width: 100%;
+    margin: 0 12px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .header .right .print {
+    margin: 0;
+  }
+
+  .header .right .print img {
+    width: 24px;
+    height: auto;
+  }
+
+  .header .right button {
+    background: none;
+    border: none;
+    color: #38808c;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 0;
+  }
+
+  .add_invitations {
+    display: block;
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+  }
+
+  .create_invite {
+    display: none;
+  }
+
+  .main_section {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  form {
+    margin: 12px 18px;
+  }
+
+  .invitations {
+    border: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .invitations .heading {
+    margin: 16px 12px;
+  }
+
+  .search_bar {
+    margin: 0 12px;
+  }
+
+  .filters {
+    margin-left: 12px;
+    margin-right: 0;
+  }
+}
