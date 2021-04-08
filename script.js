@@ -28,45 +28,6 @@ functions.forEach((data) => {
 </label>`
 })
 
-// let persons = [{
-//   a: [
-//     {
-//       name: "Azmol",
-//       invites: "one_per",
-//       side: "groom"
-//     },
-//     {
-//       name: "Anmola",
-//       invites: "family",
-//       side: "bride"
-//     },
-//   ]
-// }, {
-//   s: [
-//     {
-//       name: "shivam",
-//       invites: "one_per",
-//       side: "groom"
-//     },
-//   ]
-// }, {
-//   b: [
-//     {
-//       name: "bunty",
-//       invites: "two_per",
-//       side: "bride"
-//     },
-//   ]
-// }, {
-//   t: [
-//     {
-//       name: "tony",
-//       invites: "two_per",
-//       side: "groom"
-//     },
-//   ]
-// },]
-
 let persons = [
   {
     name: "Azmol",
@@ -134,21 +95,6 @@ let filtered_persons_by_search_input = persons;
 let filtered_persons_by_filter_tag = [];
 let filtered_persons_by_filter_tag_and_search_input = persons;
 
-// persons.sort(function (a, b) {
-//   return (Object.keys(a)[0] > Object.keys(b)[0]) - 0.5;
-// });
-
-// persons.forEach(ele => {
-//   Object.values(ele)[0].sort(function (a, b) {
-//     var nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase()
-//     if (nameA < nameB)
-//       return -1;
-//     if (nameA > nameB)
-//       return 1;
-//     return 0;
-//   });
-// })
-
 let name_input = document.getElementById("name");
 name_input.oninput = function (e) {
   if (e.target.value != "") {
@@ -187,29 +133,6 @@ search_input.addEventListener('input', e => {
   show_persons(filtered_persons_by_search_input);
 })
 
-// search_input.addEventListener('input', e => {
-//   list_of_people.innerHTML = "";
-//   persons.forEach(ele => {
-//     Object.values(ele).forEach((obj) => {
-//       obj.filter(d => {
-//         return d.name.toLowerCase().includes(e.target.value.toLowerCase())
-//       }).map(data => {
-//         // console.log(data);
-//         list_of_people.innerHTML += `<div class="person">
-//         <div class="numbers">
-//           <img src="./images/family.svg" alt="family" />
-//         </div>
-//         <div class="name">${data.name}</div>
-//         <div class="family_side">
-//           <img src="./images/groom.svg" alt="groom" />
-//         </div>
-//       </div>
-//       <hr />`
-//       })
-//     })
-//   })
-// })
-
 let active_filters = [];
 let filter_arr = document.querySelectorAll('.filter');
 filter_arr.forEach(filter_tag => {
@@ -243,29 +166,15 @@ filter_arr.forEach(filter_tag => {
         return;
       }
 
-      // console.log("one filter tag")
       show_persons(filtered_persons_by_filter_tag);
     }
     else if (active_filters.length === 2) {
-      // active_filters.forEach(filter => {
-      //   persons.forEach(person => {
-      //     if (person.side.toLowerCase().includes(filter.toLowerCase()) || person.invites.toLowerCase().includes(filter.toLowerCase())) {
-      //       filtered_persons_by_filter_tag.push(person);
-      //     }
-      //   })
-      // })
-      // filtered_persons_by_filter_tag = [...new Set([...filtered_persons_by_filter_tag])]
-      // if (filtered_persons_by_search_input.length !== 0) {
-      //   filtered_persons_by_filter_tag = filtered_persons_by_filter_tag.filter(ele => filtered_persons_by_search_input.includes(ele))
-      // }
 
       if (active_filters[0] === "bride" || active_filters[0] === "groom") {
         filtered_persons_by_filter_tag = _.filter(persons, { side: active_filters[0], invites: active_filters[1] })
-        // filtered_persons_by_filter_tag = _.filter(filtered_persons_by_filter_tag, { invites: active_filters[1] })
       }
       else {
         filtered_persons_by_filter_tag = _.filter(persons, { invites: active_filters[0], side: active_filters[1] })
-        // filtered_persons_by_filter_tag = _.filter(filtered_persons_by_filter_tag, { side: active_filters[1] })
       }
 
       if (filtered_persons_by_search_input.length !== 0) {
@@ -278,59 +187,8 @@ filter_arr.forEach(filter_tag => {
     else {
       show_persons([])
     }
-    // if (active_filters.length === 1) {
-    //   filtered_persons = [];
-    // }
-    // // filtered_persons = [];
-    // active_filters.forEach(active_filter => {
-    //   if (filtered_persons.length === 0) {
-    //     persons.forEach(alphabet => {
-    //       Object.values(alphabet).forEach(arr => {
-    //         arr.forEach(obj => {
-    //           if (obj.side.toLowerCase().includes(active_filter) || obj.invites.toLowerCase().includes(active_filter)) {
-    //             filtered_persons.push(obj);
-    //           }
-    //         })
-    //       })
-    //     })
-    //   }
-    //   else {
-    //     filtered_persons.forEach(obj => {
-    //       if (obj.side.toLowerCase().includes(active_filter) || obj.invites.toLowerCase().includes(active_filter)) {
-    //         // filtered_persons.push(obj);
-    //       } else {
-    //         let index = filtered_persons.indexOf(obj);
-    //         if (index !== -1) {
-    //           filtered_persons.splice(index, 1);
-    //         }
-    //       }
-    //     })
-    //   }
-    // })
-    // console.log(filtered_persons);
   }
 })
-
-// if (filter.innerText.toLowerCase().includes('bride') || filter.innerText.toLowerCase().includes('groom')) {
-//   persons.forEach(alphabet => {
-//     Object.values(alphabet).forEach((obj) => {
-//       obj.filter(keys => {
-//         return keys.side.toLowerCase().includes(filter.innerText.split(" ")[0].toLowerCase())
-//       }).map(data => {
-//         list_of_people.innerHTML += `<div class="person">
-//         <div class="numbers">
-//           <img src="./images/family.svg" alt="family" />
-//         </div>
-//         <div class="name">${data.name}</div>
-//         <div class="family_side">
-//           <img src="./images/groom.svg" alt="groom" />
-//         </div>
-//       </div>
-//       <hr />`
-//       })
-//     })
-//   })
-// }
 
 show_persons(persons)
 
@@ -381,6 +239,7 @@ function show_persons(arr) {
         src_side = './images/bride.svg';
         alt_side = "bride;";
       }
+
       list_of_people.innerHTML += `<div class="person">
             <div class="numbers">
               <img src=${src_invites} alt=${alt_invites} />
