@@ -24,7 +24,7 @@ functions.forEach((data) => {
   functions_div.innerHTML += `<label class="container" for=${data.id}
   >${data.name}
   <input type="checkbox" id=${data.id} name=${data.id} />
-  <span class="checkmark"></span>
+  <span class="fun_checkmark"></span>
 </label>`
 })
 
@@ -132,6 +132,7 @@ let persons = [
 
 let filtered_persons_by_search_input = persons;
 let filtered_persons_by_filter_tag = [];
+let filtered_persons_by_filter_tag_and_search_input = persons;
 
 // persons.sort(function (a, b) {
 //   return (Object.keys(a)[0] > Object.keys(b)[0]) - 0.5;
@@ -179,7 +180,9 @@ search_input.addEventListener('input', e => {
     return ele.name.trim().toLowerCase().includes(e.target.value.trim().toLowerCase())
   })
   if (filtered_persons_by_filter_tag.length !== 0) {
-    filtered_persons_by_search_input = filtered_persons_by_search_input.filter(ele => filtered_persons_by_filter_tag.includes(ele))
+    filtered_persons_by_filter_tag_and_search_input = filtered_persons_by_search_input.filter(ele => filtered_persons_by_filter_tag.includes(ele));
+    show_persons(filtered_persons_by_filter_tag_and_search_input);
+    return;
   }
   show_persons(filtered_persons_by_search_input);
 })
@@ -235,7 +238,9 @@ filter_arr.forEach(filter_tag => {
       }
 
       if (filtered_persons_by_search_input.length !== 0) {
-        filtered_persons_by_filter_tag = filtered_persons_by_filter_tag.filter(ele => filtered_persons_by_search_input.includes(ele));
+        filtered_persons_by_filter_tag_and_search_input = filtered_persons_by_filter_tag.filter(ele => filtered_persons_by_search_input.includes(ele));
+        show_persons(filtered_persons_by_filter_tag_and_search_input);
+        return;
       }
 
       // console.log("one filter tag")
@@ -255,16 +260,18 @@ filter_arr.forEach(filter_tag => {
       // }
 
       if (active_filters[0] === "bride" || active_filters[0] === "groom") {
-        filtered_persons_by_filter_tag = _.filter(persons, { side: active_filters[0] })
-        filtered_persons_by_filter_tag = _.filter(filtered_persons_by_filter_tag, { invites: active_filters[1] })
+        filtered_persons_by_filter_tag = _.filter(persons, { side: active_filters[0], invites: active_filters[1] })
+        // filtered_persons_by_filter_tag = _.filter(filtered_persons_by_filter_tag, { invites: active_filters[1] })
       }
       else {
-        filtered_persons_by_filter_tag = _.filter(persons, { invites: active_filters[0] })
-        filtered_persons_by_filter_tag = _.filter(filtered_persons_by_filter_tag, { side: active_filters[1] })
+        filtered_persons_by_filter_tag = _.filter(persons, { invites: active_filters[0], side: active_filters[1] })
+        // filtered_persons_by_filter_tag = _.filter(filtered_persons_by_filter_tag, { side: active_filters[1] })
       }
 
       if (filtered_persons_by_search_input.length !== 0) {
-        filtered_persons_by_filter_tag = filtered_persons_by_filter_tag.filter(ele => filtered_persons_by_search_input.includes(ele))
+        filtered_persons_by_filter_tag_and_search_input = filtered_persons_by_filter_tag.filter(ele => filtered_persons_by_search_input.includes(ele))
+        show_persons(filtered_persons_by_filter_tag_and_search_input);
+        return;
       }
       show_persons(filtered_persons_by_filter_tag);
     }
