@@ -253,3 +253,20 @@ function show_persons(arr) {
     })
   }
 }
+
+let add_invitation_btn = document.querySelector('.add_invitations');
+
+add_invitation_btn.addEventListener('click', () => {
+  document.querySelector('.create_invite').style.display = 'block';
+  document.querySelector('.invitations').style.display = 'none';
+  add_invitation_btn.style.display = 'none';
+})
+
+let back_btn = document.querySelector('.back_btn');
+
+back_btn.addEventListener('click', () => {
+  document.querySelector('.create_invite').style.display = 'none';
+  document.querySelector('.invite_details').style.display = 'none';
+  document.querySelector('.invitations').style.display = 'block';
+  add_invitation_btn.style.display = 'block';
+})

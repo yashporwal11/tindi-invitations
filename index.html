@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="header">
+    <header class="header desktop_only">
       <div class="left">
         <h1>Tindi</h1>
       </div>
@@ -19,14 +19,21 @@
         <button class="button">Logout</button>
       </div>
     </header>
-    <a href="./create_invite.html"
-      ><div class="add_invitations">
-        <img src="./images/add.svg" alt="add" />
-      </div>
-    </a>
+    <button class="add_invitations">
+      <img src="./images/add.svg" alt="add" />
+    </button>
     <div class="main_section">
       <div class="create_invite">
-        <h1 class="heading">Create Invite</h1>
+        <h1 class="heading desktop_only">Create Invite</h1>
+        <header class="header mobile_only">
+          <div class="right">
+            <div class="print">
+              <img src="./images/print.svg" alt="print" />
+            </div>
+            <h2>Create Invite</h2>
+            <button class="button back_btn">Back</button>
+          </div>
+        </header>
         <form>
           <label for="name">Name:</label>
           <input
@@ -122,7 +129,100 @@
           <button class="button" type="submit">Save Changes</button>
         </form>
       </div>
+      <div class="invite_details">
+        <h1 class="heading desktop_only">Invite Details</h1>
+        <header class="header mobile_only">
+          <div class="right">
+            <div class="print">
+              <img src="./images/print.svg" alt="print" />
+            </div>
+            <h2>Invite Details</h2>
+            <button class="button back_btn">Back</button>
+          </div>
+        </header>
+        <form>
+          <label for="name">Name:</label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            placeholder="Enter name"
+            value=""
+          />
+          <legend>Invitation From:</legend>
+          <div class="invitation_from">
+            <label class="container radio_label" for="bride"
+              >Bride
+              <input
+                type="radio"
+                id="bride"
+                value="bride"
+                name="invitation_from"
+              />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container radio_label" for="groom"
+              >Groom
+              <input
+                type="radio"
+                id="groom"
+                value="groom"
+                name="invitation_from"
+              />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <legend>Invite Persons:</legend>
+          <div class="invite_person">
+            <label class="container radio_label" for="one_per"
+              >1 per
+              <input
+                type="radio"
+                id="one_per"
+                value="1 per"
+                name="invite_person"
+              />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container radio_label" for="two_per"
+              >2 per
+              <input
+                type="radio"
+                id="two_per"
+                value="2 per"
+                name="invite_person"
+              />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container radio_label" for="family"
+              >Family
+              <input
+                type="radio"
+                id="family"
+                value="family"
+                name="invite_person"
+              />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <legend>Functions:</legend>
+          <div class="functions"></div>
+          <button class="button" type="submit">Update Changes</button>
+          <button class="button">Back</button>
+        </form>
+        <div class="qr_code">
+          <img src="./images/barcode.svg" alt="qr_code" />
+        </div>
+      </div>
       <div class="invitations">
+        <header class="header mobile_only">
+          <div class="right">
+            <div class="print">
+              <img src="./images/print.svg" alt="print" />
+            </div>
+            <button class="button">Logout</button>
+          </div>
+        </header>
         <h1 class="heading">Invitations</h1>
         <div class="search_bar">
           <img src="./images/search.svg" alt="search" />
@@ -135,19 +235,7 @@
           <button class="filter">Two</button>
           <button class="filter">Family</button>
         </div>
-        <div class="list_of_people">
-          <!-- <div class="alphabet">A</div>
-          <div class="person">
-            <div class="numbers">
-              <img src="./images/family.svg" alt="family" />
-            </div>
-            <div class="name">Anmol Bhojani</div>
-            <div class="family_side">
-              <img src="./images/groom.svg" alt="groom" />
-            </div>
-          </div>
-          <hr /> -->
-        </div>
+        <div class="list_of_people"></div>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)"></script>

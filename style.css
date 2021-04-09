@@ -8,6 +8,14 @@
   box-sizing: border-box;
 }
 
+.mobile_only {
+  display: none;
+}
+
+.invite_details {
+  display: none;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -58,7 +66,8 @@ header .right button {
   margin: 60px;
 }
 
-.create_invite {
+.create_invite,
+.invite_details {
   background: #ffffff;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
@@ -167,28 +176,21 @@ legend {
   position: absolute;
   background-color: #e5e5e5;
   border-radius: 50%;
-  /* top: 6px;
-  left: 6px;
-  height: 25px;
-  width: 25px; */
   top: 9px;
   left: 9px;
   height: 20px;
   width: 20px;
 }
 
-/* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
   background-color: #ccc;
 }
 
-/* When the radio button is checked, add a blue background */
 .container input:checked ~ .checkmark {
   background-color: #ffffff;
   border: 2px solid #38808c;
 }
 
-/* Create the indicator (the dot/circle - hidden when not checked) */
 .checkmark:after {
   content: "";
   position: absolute;
@@ -198,11 +200,8 @@ legend {
   border-radius: 50%;
   top: 6.5px;
   left: 6.5px;
-  /* top: 9px;
-  left: 9px; */
 }
 
-/* Show the indicator (dot/circle) when checked */
 .container input:checked ~ .checkmark:after {
   background: #38808c;
   top: 4.5px;
@@ -394,7 +393,8 @@ hr {
     align-items: center;
   }
 
-  .create_invite {
+  .create_invite,
+  .invite_details {
     width: 100%;
   }
 
@@ -404,8 +404,26 @@ hr {
 }
 
 @media screen and (max-width: 576px) {
+  .mobile_only {
+    display: flex;
+  }
+
+  .desktop_only {
+    display: none;
+  }
+
+  .create_invite,
+  .invite_details {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    max-width: none;
+    border-radius: 0;
+  }
+
   .header {
     height: 60px;
+    min-height: 60px;
   }
 
   .header .left {
@@ -444,6 +462,9 @@ hr {
     position: fixed;
     bottom: 18px;
     right: 18px;
+    background: transparent;
+    border: none;
+    outline: none;
   }
 
   .create_invite {
@@ -461,6 +482,7 @@ hr {
   }
 
   .invitations {
+    height: 100vh;
     border: none;
     padding: 0;
     margin: 0;
