@@ -270,3 +270,20 @@ back_btn.addEventListener('click', () => {
   document.querySelector('.invitations').style.display = 'block';
   add_invitation_btn.style.display = 'block';
 })
+
+let desktop_backBtn = document.querySelector('.desktop_backBtn');
+
+desktop_backBtn.addEventListener('click', () => {
+  document.querySelector('.create_invite').style.display = 'block';
+  document.querySelector('.invite_details').style.display = 'none';
+})
+
+let person = document.querySelector('.person');
+
+person.addEventListener('click', () => {
+  document.querySelector('.create_invite').style.display = 'none';
+  document.querySelector('.invite_details').style.display = 'block';
+  if (screen.width <= 576) {
+    document.querySelector('.invitations').style.display = 'none';
+  }
+})

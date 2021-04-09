@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.login_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  padding: 0 18px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.login_form h1 {
+  font-family: "Courgette", cursive;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 50px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  color: #38808c;
+  margin-top: 15vh;
+  margin-bottom: 5vh;
+}
+
+.login_form form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 5vh 0;
+}
+
+.login_form form input {
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 4px 8px;
+  outline: none;
+  color: #353535;
+  height: 40px;
+  background: #ffffff;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin: 6px 0px;
+  border: 1px solid #9c9c9c;
+}
+
+.login_form form input:focus {
+  border: 1px solid #38808c;
+  box-shadow: 0px 0px 2px 3px rgba(56, 128, 140, 0.2);
+}
+
+.login_form form label {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #5c5c5c;
+  margin: 6px 0px;
+}
+
+.login_form form button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  padding: 10.5px 24px;
+  height: 42px;
+  color: #ffffff;
+  background: #38808c;
+  border-radius: 8px;
+  border: none;
+  margin-top: 14px;
+  outline: none;
+  cursor: pointer;
+}
+
+.login_form form p {
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  margin: 8px auto;
+}
+
+.login_form form p a {
+  text-decoration: none;
+  color: #38808c;
+}
+
+.login_form footer {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #38808c;
+  margin-bottom: 15vh;
+  margin-top: 5vh;
+}
+
+.login_form footer a {
+  text-decoration: none;
+  color: #dab035;
+}
+
+@media screen and (max-width: 576px) {
+  .login_form {
+    border-radius: 0;
+    margin: 0;
+    height: 100vh;
+  }
+}
