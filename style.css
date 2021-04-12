@@ -26,7 +26,8 @@ header {
 }
 
 header .left {
-  width: 30%;
+  /* width: 30%; */
+  width: 25%;
   text-align: center;
 }
 
@@ -41,11 +42,13 @@ header .left h1 {
 }
 
 header .right {
-  width: 30%;
+  /* width: 30%; */
+  width: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 24px;
+  /* margin-right: 24px; */
+  margin-right: 40px;
 }
 
 header .right .print {
@@ -263,6 +266,11 @@ legend {
   cursor: pointer;
 }
 
+.invite_details .qr_code {
+  text-align: center;
+  margin-top: 64px;
+}
+
 .invitations {
   background: #ffffff;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
@@ -274,6 +282,10 @@ legend {
   display: flex;
   flex-direction: column;
   padding: 18px 0;
+}
+
+.invitations .header {
+  box-shadow: none;
 }
 
 .invitations h1 {
@@ -329,6 +341,10 @@ legend {
   outline: none;
 }
 
+.filter:first-child {
+  margin-left: 0;
+}
+
 .filter.active {
   border: 1px solid #c99d45;
   background: #faf6ed;
@@ -349,7 +365,7 @@ legend {
   font-family: "Roboto", sans-serif;
   display: flex;
   align-items: center;
-  padding: 4px 12px;
+  padding: 4px 18px;
   text-transform: capitalize;
 }
 
@@ -432,10 +448,20 @@ hr {
 
   .header .right {
     width: 100%;
-    margin: 0 12px;
+    margin: 0 18px;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+  }
+
+  .header .right h2 {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+    color: #353535;
   }
 
   .header .right .print {
@@ -488,17 +514,11 @@ hr {
     margin: 0;
     border-radius: 0;
   }
-
-  .invitations .heading {
-    margin: 16px 12px;
-  }
-
-  .search_bar {
-    margin: 0 12px;
-  }
-
   .filters {
-    margin-left: 12px;
     margin-right: 0;
+  }
+
+  .person {
+    margin: 0;
   }
 }
